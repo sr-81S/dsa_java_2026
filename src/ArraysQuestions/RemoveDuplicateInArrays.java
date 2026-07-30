@@ -24,10 +24,31 @@ public class RemoveDuplicateInArrays {
         return result;
     }
 
+    static int[] findDuplicate(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return new int[0];
+        }
+        if(arr.length ==1){
+            return arr;
+        }
+
+        int index = 0;
+
+        for(int i =1; i< arr.length; i++){
+            if(arr[i] != arr[index]){
+                index++;
+                arr[index] = arr[i];
+            }
+        }
+        return Arrays.copyOf(arr, index + 1);
+    }
+
     public static void main(String[] args) {
         int [] arr = {10,6,8,7,5,5,8,6,9,99,6,1,455,99,0};
         Arrays.sort(arr);
         int[] uniqueElements = removeDuplicate(arr);
+        int[] uniqueElements2 = findDuplicate(arr);
         System.out.println(Arrays.toString(uniqueElements));
+        System.out.println(Arrays.toString(uniqueElements2));
     }
 }
