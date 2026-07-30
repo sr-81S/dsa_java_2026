@@ -32,6 +32,8 @@ public class RemoveDuplicateInArrays {
             return arr;
         }
 
+        Arrays.sort(arr);
+
         int index = 0;
 
         for(int i =1; i< arr.length; i++){
@@ -45,7 +47,6 @@ public class RemoveDuplicateInArrays {
 
     public static void main(String[] args) {
         int [] arr = {10,6,8,7,5,5,8,6,9,99,6,1,455,99,0};
-        Arrays.sort(arr);
         int[] uniqueElements = removeDuplicate(arr);
         int[] uniqueElements2 = findDuplicate(arr);
         System.out.println(Arrays.toString(uniqueElements));
