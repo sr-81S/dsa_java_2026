@@ -8,15 +8,15 @@ import java.util.Set;
 public class FindDuplicateInArray {
 
     public static List<Integer> findDuplicate(int[] nums) {
-        List<Integer> list = new ArrayList<>();
-        if(nums == null || nums.length == 0) return list;
-        Set<Integer> set = new HashSet<>();
+        List<Integer> duplicates = new ArrayList<>();
+        if(nums == null || nums.length == 0) return duplicates;
+        Set<Integer> seen = new HashSet<>();
         for(int num : nums){
-            if(!set.add(num) && !list.contains(num) ){
-                list.add(num);
+            if(!seen.add(num) && !duplicates.contains(num) ){
+                duplicates.add(num);
             }
         }
-        return list;
+        return duplicates;
     }
 
     public static void main(String[] args) {
